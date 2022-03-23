@@ -113,17 +113,20 @@ def launchDict(data):
     return launch_dict
 
 def csvExport(df):
+    
     landing_outcomes = df.value_counts("Outcome")
-
-    bad_outcomes=set(landing_outcomes.keys()[[1,3,5,6,7]])
+    bad_outcomes = set(landing_outcomes.keys()[[1,3,5,6,7]])
 
     landing_class = []
 
-    for i in df["Outcome"]:
-        if i in bad_outcomes:
-            landing_class.append(1)
+    for i in range(len(df["FlightNumber"])):
+        landing_class.append("T")
+
+    for i in range(len(df["Outcome"])):
+        if df["Outcome"][i] in bad_outcomes:
+            landing_class[i] = 0
         else:
-            landing_class.append(0)
+            landing_class[i] = 1
 
     df["Class"] = landing_class
 
