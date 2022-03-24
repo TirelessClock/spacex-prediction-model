@@ -17,3 +17,13 @@ if os.path.exists("dataset.csv") == False:
     launch_dict = he.launchDict(df)
     df = pd.DataFrame(launch_dict)
     he.csvExport(df)
+
+print("A")
+df = pd.read_csv("dataset.csv")
+
+he.OneHotEncoding(df,"Orbit")
+he.OneHotEncoding(df,"LaunchSite")
+he.OneHotEncoding(df,"LandingPad")
+he.OneHotEncoding(df,"Serial")
+
+df.to_csv("dataset.csv")

@@ -131,3 +131,8 @@ def csvExport(df):
     df["Class"] = landing_class
 
     df.to_csv("dataset.csv", index=False)
+
+def OneHotEncoding(df,column):
+    column_ohe = pd.get_dummies(df[column])
+    for i in column_ohe.columns:
+        df[column+"_"+i] = column_ohe[i]
