@@ -18,6 +18,8 @@ if os.path.exists("dataset.csv") == False:
     df = pd.DataFrame(launch_dict)
     he.csvExport(df)
 
+
+print("A")
 df = pd.read_csv("dataset.csv")
 
 df = df[['FlightNumber', 'PayloadMass', 'Orbit', 'LaunchSite', 'Flights', 'GridFins', 'Reused', 'Legs', 'LandingPad', 'Block', 'ReusedCount', 'Serial']]
@@ -26,6 +28,12 @@ he.OneHotEncoding(df,"Orbit")
 he.OneHotEncoding(df,"LaunchSite")
 he.OneHotEncoding(df,"LandingPad")
 he.OneHotEncoding(df,"Serial")
+he.OneHotEncoding(df, "GridFins")
+he.OneHotEncoding(df, "Reused")
+he.OneHotEncoding(df, "Legs")
 
+df = df.drop(["Orbit", "LaunchSite", "LandingPad", "Serial","GridFins","Reused","Legs"], inplace= False, axis = 1)
 
-df.to_csv("dataset.csv")
+df.astype("float64")
+
+df.to_csv("dataset2.csv")

@@ -132,7 +132,9 @@ def csvExport(df):
 
     df.to_csv("dataset.csv", index=False)
 
+    
 def OneHotEncoding(df,column):
     column_ohe = pd.get_dummies(df[column])
     for i in column_ohe.columns:
-        df[column+"_"+i] = column_ohe[i]
+        df[column+"_"+str(i)] = column_ohe[i]
+    print("Q")

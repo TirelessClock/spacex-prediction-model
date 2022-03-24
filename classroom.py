@@ -1,22 +1,20 @@
 import pandas as pd 
+import numpy as np 
+import matplotlib.pyplot as plt 
+import seaborn as sns
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
+from sklearn.model_selection import GridSearchCV
+from sklearn.linear_model import LogisticRegression
+from sklearn.svm import SVC
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.neighbors import KNeighborsClassifier
 
-df = pd.read_csv("dataset.csv")
+data = pd.read_csv("dataset.csv")
+y = data["Class"].to_numpy()
+x = pd.read_csv("dataset2.csv")
 
+x = StandardScaler().fit_transform(x)
+x_train, x_test, y_train, y_test = train_test_split(x,y)
 
-orbit_ohe = pd.get_dummies(df["Orbit"])
-for i in orbit_ohe.columns:
-    df["Orbit_"+i] = orbit_ohe[i]
-
-ls_ohe = pd.get_dummies(df["LaunchSite"])
-for i in ls_ohe.columns:
-    df["LaunchSite_"+i] = ls_ohe[i]
-
-lp_ohe = pd.get_dummies(df["LandingPad"])
-for i in lp_ohe.columns:
-    df["LandingPad_"+i] = lp_ohe[i]
-
-serial_ohe = pd.get_dummies(df["Serial"])
-for i in serial_ohe.columns:
-    df["Serial_"+i] = serial_ohe[i]
-
-df.to_csv("dataset_2.csv")
+print(y_test.shape)
