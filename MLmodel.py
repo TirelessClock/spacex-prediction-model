@@ -23,3 +23,4 @@ logreg_cv = LogisticRegression()
 
 clf = GridSearchCV(logreg_cv ,param_grid = parameters, scoring='accuracy', cv=10)
 clf.fit(x_train, y_train)
+
