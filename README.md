@@ -7,7 +7,7 @@ In this project, I have used this data, collected from the SpaceX public API, to
 
 ## The project
 
-1. `dataCleanMain.py`: Collected data information from the SpaceX official API (https://api.spacexdata.com/v4/launches/past)  of previous launches using the Python Request library. This file further contains the data wrangling process using the Pandas Library. 
+1. `dataCleanMain.py`: Collected data information from the SpaceX official API (https://api.spacexdata.com/v4/launches/past)  of previous launches using the Python Request library. This file further contains the data wrangling process using the Pandas Library. The obtained data was stored in .CSV files `dataset.csv` and `dataset2.csv`.
 2. `dataCleanHelper.py`: Wrote the functions used in dataCleanMain.py for the cleaning process. These included:
     a. Removal of duplicates and extra information using Pandas.
     b. Making specific API requests for dataframe construction and organisation.
@@ -16,7 +16,11 @@ In this project, I have used this data, collected from the SpaceX public API, to
     e. Function for One Hot Encoding of Columns. 
     f. Removing NULL values and replacing with the mean. 
 3. `graphConstructor.py`: Used seaborn and matplotlib libraries to construct appropriate graphs in order to detect inconsistencies. 
-4. `MLmodel.py`: Build Logistic Regression model using sklearn and GridSearchCV libraries to predict the Outcome of launch. 
+4. `MLmodel.py`: Build Logistic Regression model using sklearn and GridSearchCV libraries to predict the outcome of launches (0 for failed launch and 1 for successful launch). 
+
+## Outcome:
+
+Logistic Regression model built using 
 
 
 ## Side Notes:
