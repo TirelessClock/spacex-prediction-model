@@ -1,16 +1,23 @@
 # SpaceX Prediction Model
 
 ## Introduction
-SpaceX needs no introduction. I don't even know why I have this section. 
+SpaceX has had over a hundred and fifty rocket launches over its 20 years of existence. The success or failure of these launches have been dependent on several factors including, though not limited to, the Payload Mass of the rocket, Booster Version, Destination Orbit etc. 
+In this project, I have used this data, collected from the SpaceX public API, to train a Logistic Regression Model to predict the success or failure of a future flight. 
+
 
 ## The project
-Why is SpaceX so successful? Reusable rockets. The Stage One of rockets can be reused, apparently. But only if it doesn't explode(obviously). That has happened a few times. 
-So, if a company can reuse a rocket, they don't have to build a new one for the next flight (again, obviously). This saves on expenses, and we're talking about expenses in the ballpark of $100M+. So, what this means is, given the information of previous launches, we can give a vague probability of the success of the next one. This gives us a vague idea of how much the next rocket would cost. 
 
-So, here I did a few things:
-1. Collected this information from the SpaceX official API of previous launches using the Python Request library (also from webscraping their Wikipedia page using BeautifulSoup library, but that was a side project)
-2. Cleaned up this data (believe it or not, this was one of the hardest part) using the Pandas library (and LOTS of patience).
-3. Messed around with matplotlib and seaborn libraries to make several graphs mapping the effect of different features (sort of a side project, but it turned out to be super helpful because I discovered a bug from the graphs)
+1. `dataCleanMain.py`: Collected data information from the SpaceX official API (https://api.spacexdata.com/v4/launches/past)  of previous launches using the Python Request library. This file further contains the data wrangling process using the Pandas Library. 
+2. `dataCleanHelper.py`: Wrote the functions used in dataCleanMain.py for the cleaning process. These included:
+    a. Removal of duplicates and extra information using Pandas.
+    b. Making specific API requests for dataframe construction and organisation.
+    c. Removing discrepencies in data and file formats as well as syntactical problems. 
+    d. Organisation and Binary Classification of "Outcomes" Column of DataFrame for Model Training. 
+    e. Function for One Hot Encoding of Columns. 
+    f. Removing NULL values and replacing with the mean. 
+3. `graphConstructor.py`: Used seaborn and matplotlib libraries to construct appropriate graphs in order to detect inconsistencies. 
+4. `MLmodel.py`: Build Logistic Regression model using sklearn and GridSearchCV libraries to predict the Outcome of launch. 
+
 
 ## Side Notes:
 

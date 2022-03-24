@@ -1,7 +1,5 @@
 import pandas as pd 
 import numpy as np 
-import matplotlib.pyplot as plt 
-import seaborn as sns
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import GridSearchCV
@@ -25,6 +23,3 @@ logreg_cv = LogisticRegression()
 
 clf = GridSearchCV(logreg_cv ,param_grid = parameters, scoring='accuracy', cv=10)
 clf.fit(x_train, y_train)
-
-print(clf.best_params_)
-print(clf.best_score_)
