@@ -22,4 +22,4 @@ Over the course of this project, I learnt a LOT about a LOT. This project was pr
 3. Learnt how to use self made modules and packages. Never did that before, and my first try with it was absolutely disastrous (Deleted the second repository because of the horrendous file structuring.)
 4. Finally came to use and appreciate file formatting systems, and their immense timesaving potential. 
 5. Using this project as an excuse, finally structured my laptop's rat-hair organisation system.
-6. Graphs.
+6. Graphs plotting. Another check on my Software Skills Bingo.
