@@ -19,7 +19,6 @@ if os.path.exists("dataset.csv") == False:
     he.csvExport(df)
 
 
-print("A")
 df = pd.read_csv("dataset.csv")
 
 df = df[['FlightNumber', 'PayloadMass', 'Orbit', 'LaunchSite', 'Flights', 'GridFins', 'Reused', 'Legs', 'LandingPad', 'Block', 'ReusedCount', 'Serial']]
@@ -34,6 +33,9 @@ he.OneHotEncoding(df, "Legs")
 
 df = df.drop(["Orbit", "LaunchSite", "LandingPad", "Serial","GridFins","Reused","Legs"], inplace= False, axis = 1)
 
-df.astype("float64")
 
+he.removeNulls(df, "PayloadMass")
+he.removeNulls(df, "Block")
+
+df.astype("float64")
 df.to_csv("dataset2.csv")

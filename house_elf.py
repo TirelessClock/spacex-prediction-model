@@ -137,4 +137,11 @@ def OneHotEncoding(df,column):
     column_ohe = pd.get_dummies(df[column])
     for i in column_ohe.columns:
         df[column+"_"+str(i)] = column_ohe[i]
-    print("Q")
+
+def removeNulls(df, column):
+    mean = df[column].mean()
+    check_for_nan = df[column].isnull()
+    for i in range(len(check_for_nan)):
+        if check_for_nan[i] == True:
+            df[column][i] = mean
+    
