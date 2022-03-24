@@ -20,7 +20,8 @@ In this project, I have used this data, collected from the SpaceX public API, to
 
 ## Outcome:
 
-Logistic Regression model built using 
+Logistic Regression model built using sklearn and GridSearchCV returned the following result:
+
 
 
 ## Side Notes:
