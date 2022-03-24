@@ -10,7 +10,7 @@ So, if a company can reuse a rocket, they don't have to build a new one for the 
 So, here I did a few things:
 1. Collected this information from the SpaceX official API of previous launches using the Python Request library (also from webscraping their Wikipedia page using BeautifulSoup library, but that was a side project)
 2. Cleaned up this data (believe it or not, this was one of the hardest part) using the Pandas library (and LOTS of patience).
-3. Work in progress... 
+3. Messed around with matplotlib and seaborn libraries to make several graphs mapping the effect of different features (sort of a side project, but it turned out to be super helpful because I discovered a bug from the graphs)
 
 ## Side Notes:
 
@@ -22,4 +22,4 @@ Over the course of this project, I learnt a LOT about a LOT. This project was pr
 3. Learnt how to use self made modules and packages. Never did that before, and my first try with it was absolutely disastrous (Deleted the second repository because of the horrendous file structuring.)
 4. Finally came to use and appreciate file formatting systems, and their immense timesaving potential. 
 5. Using this project as an excuse, finally structured my laptop's rat-hair organisation system.
-6. To be Updated...
+6. Graphs.
