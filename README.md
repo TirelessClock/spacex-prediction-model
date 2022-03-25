@@ -16,7 +16,7 @@ In this project, I have used this data, collected from the SpaceX public API, to
     e. Function for One Hot Encoding of Columns. 
     f. Removing NULL values and replacing with the mean. 
 - `graphConstructor.py`: Used **seaborn** and **matplotlib** libraries to construct appropriate graphs in order to detect inconsistencies. 
-- `MLmodel.py`: Build Logistic Regression model using **sklearn** and **GridSearchCV** libraries to predict the outcome of launches (0 for failed launch and 1 for successful launch). 
+- `MLmodel.py`: Built Logistic Regression model using **sklearn** and **GridSearchCV** libraries to predict the outcome of launches (0 for failed launch and 1 for successful launch). 
 - `dataset.csv`: In the process of dataframe construction, I had to load 150 individual data pieces from different SpaceX APIs, a process that involved frequent requests and back and forth from servers, and took over 9 minutes to complete. This .CSV was made to store that data locally and hence save myself time.
 - `dataset2.csv`: The final dataset that was to be used to train and test the ML model. This dataset contained all numeric data (**float64**) and replaced Categorical Datatypes with One Hot Encoding. 
 
