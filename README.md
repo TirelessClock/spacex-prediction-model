@@ -30,6 +30,6 @@ Accuracy: 0.8846
 
 ## Side Notes:
 
-- When dealing with NaN values in the table, I had two choices, both with its demerits - replacing the NaN values with the mean and removing the entire rows containing NaN values. Going with the former resulted in a relatively innacurate dataset, while going with the latter resulted in a much smaller dataset. I picked what I deemed to be the lesser of two evils, and went with the mean option. 
+- When dealing with NaN values in the table, I had two choices, both with their demerits - replacing the NaN values with the mean and removing the entire rows containing NaN values. Going with the former resulted in a relatively inaccurate dataset, while going with the latter resulted in a much smaller dataset. I picked what I deemed to be the lesser of two evils, and went with the mean option. 
 - The relatively low accuracy is a result of a small size (154 rows) of dataset and corresponding large number of parameters (11 columns). 
 - This final project was the third draft of my project. Two previous drafts were made and deleted - one because of issues connecting with GitHub (This was my first time building a project synchronously with GitHub, and hence had difficulties in the syncing setup), and the other because of a messy file structure I employed while learning and implementing file structuring and modules
