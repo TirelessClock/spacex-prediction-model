@@ -5,33 +5,31 @@ SpaceX has had over a hundred and fifty rocket launches over its 20 years of exi
 In this project, I have used this data, collected from the SpaceX public API, to train a Logistic Regression Model to predict the success or failure of a future flight. 
 
 
-## The project
+## Project Details
 
-1. `dataCleanMain.py`: Collected data information from the SpaceX official API (https://api.spacexdata.com/v4/launches/past)  of previous launches using the Python Request library. This file further contains the data wrangling process using the Pandas Library. The obtained data was stored in .CSV files `dataset.csv` and `dataset2.csv`.
-2. `dataCleanHelper.py`: Wrote the functions used in dataCleanMain.py for the cleaning process. These included:
-    a. Removal of duplicates and extra information using Pandas.
+- `dataCleanMain.py`: Collected data information from the SpaceX official API (https://api.spacexdata.com/v4/launches/past)  of previous launches using the Python Request library. This file further contains the data wrangling process using the Pandas Library. The obtained data was stored in .CSV files `dataset.csv` and `dataset2.csv`.
+- `dataCleanHelper.py`: Wrote the functions used in dataCleanMain.py for the cleaning process. These included:
+    a. Removal of duplicates and extra information using **Pandas**.
     b. Making specific API requests for dataframe construction and organisation.
     c. Removing discrepencies in data and file formats as well as syntactical problems. 
     d. Organisation and Binary Classification of "Outcomes" Column of DataFrame for Model Training. 
     e. Function for One Hot Encoding of Columns. 
     f. Removing NULL values and replacing with the mean. 
-3. `graphConstructor.py`: Used seaborn and matplotlib libraries to construct appropriate graphs in order to detect inconsistencies. 
-4. `MLmodel.py`: Build Logistic Regression model using sklearn and GridSearchCV libraries to predict the outcome of launches (0 for failed launch and 1 for successful launch). 
+- `graphConstructor.py`: Used **seaborn** and **matplotlib** libraries to construct appropriate graphs in order to detect inconsistencies. 
+- `MLmodel.py`: Build Logistic Regression model using **sklearn** and **GridSearchCV** libraries to predict the outcome of launches (0 for failed launch and 1 for successful launch). 
+- `dataset.csv`: In the process of dataframe construction, I had to load 150 individual data pieces from different SpaceX APIs, a process that involved frequent requests and back and forth from servers, and took over 9 minutes to complete. This .CSV was made to store that data locally and hence save myself time.
+- `dataset2.csv`: The final dataset that was to be used to train and test the ML model. This dataset contained all numeric data (**float64**) and replaced Categorical Datatypes with One Hot Encoding. 
 
 ## Outcome:
 
-Logistic Regression model built using sklearn and GridSearchCV returned the following result:
+Logistic Regression model built using sklearn and GridSearchCV on a data of size 154 returned the following result:
 
+Tuned Hyperparameters: {'C':0.1, 'penalty': 'l1', 'solver saga'}
 
+Accuracy: 0.8846
 
 ## Side Notes:
 
-(Don't bother reading this, I'm writing it for myself)
-Over the course of this project, I learnt a LOT about a LOT. This project was pretty significant for several reasons:
-
-1. First proper project of mine.
-2. Through this project I learnt how to use Git and Github - concepts I was previously largely unfamiliar with. In fact, this repo isn't the first repo for this project made - over the course of development, I made two successive repositories before this, but deleted them both for a plethora of reasons.
-3. Learnt how to use self made modules and packages. Never did that before, and my first try with it was absolutely disastrous (Deleted the second repository because of the horrendous file structuring.)
-4. Finally came to use and appreciate file formatting systems, and their immense timesaving potential. 
-5. Using this project as an excuse, finally structured my laptop's rat-hair organisation system.
-6. Graphs plotting. Another check on my Software Skills Bingo.
+- When dealing with NaN values in the table, I had two choices, both with its demerits - replacing the NaN values with the mean and removing the entire rows containing NaN values. Going with the former resulted in a relatively innacurate dataset, while going with the latter resulted in a much smaller dataset. I picked what I deemed to be the lesser of two evils, and went with the mean option. 
+- The relatively low accuracy is a result of a small size (154 rows) of dataset and corresponding large number of parameters (11 columns). 
+- This final project was the third draft of my project. Two previous drafts were made and deleted - one because of issues connecting with GitHub (This was my first time building a project synchronously with GitHub, and hence had difficulties in the syncing setup), and the other because of a messy file structure I employed while learning and implementing file structuring and modules
