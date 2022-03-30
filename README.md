@@ -14,7 +14,7 @@ In this project, I have used this data, collected from the SpaceX public API, to
     c. Removing discrepencies in data and file formats as well as syntactical problems.\ 
     d. Organisation and Binary Classification of "Outcomes" Column of DataFrame for Model Training. \
     e. Function for One Hot Encoding of Columns. \
-    f. Removing NULL values and replacing with the mean. \
+    f. Removing NULL values and replacing with the mean.
 - `graphConstructor.py`: Used **seaborn** and **matplotlib** libraries to construct appropriate graphs in order to detect inconsistencies. 
 - `MLmodel.py`: Built Logistic Regression model using **sklearn** and **GridSearchCV** libraries to predict the outcome of launches (0 for failed launch and 1 for successful launch). 
 - `dataset.csv`: In the process of dataframe construction, I had to load 150 individual data pieces from different SpaceX APIs, a process that involved frequent requests and back and forth from servers, and took over 9 minutes to complete. This .CSV was made to store that data locally and hence save myself time.
