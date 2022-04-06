@@ -24,7 +24,7 @@ In this project, I have used this data, collected from the SpaceX public API, to
 
 Logistic Regression model built using sklearn and GridSearchCV on a data of size 154 returned the following result:
 
-Tuned Hyperparameters: {'C':0.1, 'penalty': 'l1', 'solver saga'}  
+Tuned Hyperparameters: {'C':0.1, 'penalty': 'l1', 'solver': 'saga'}  
 Accuracy: 0.8846
 
 ## Side Notes:
